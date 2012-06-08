@@ -157,6 +157,16 @@
 			"uri":"/umlsequence/umlsequence.json",
 			"icon_url":"/umlsequence/umlsequence.png",
 			"visible":true
+		},
+		
+		{
+			"title":"Customer Journey Mapping",
+			"namespace":"http://b3mn.org/stencilset/cjm#",
+			"description":"Stencil Set to create customer journey mapping",
+			"uri":"/cjm/cjm.json",
+			"icon_url":"/cjm/cjm.png",
+			"visible":true
 		}
+
 
 ]

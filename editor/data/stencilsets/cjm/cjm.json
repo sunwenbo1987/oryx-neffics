@@ -1,0 +1,796 @@
+{
+	"title":"Customer Journey Mapping",
+	"namespace":"http://www.example.org/workflownets#",
+	"description":"Simple stencil set for Customer Journey Mapping",
+ 	"stencils" : [
+ 		{
+			"type": "node",
+			"id":"diagram",
+			"title":"Diagram",
+			"description":"",
+			"view":"diagram.svg",
+			"icon":"diagram.png",
+			"mayBeRoot": true,
+			"roles": [
+			],
+			"properties": [
+				{
+					"id":"title",
+					"type":"String",
+					"title":"Title",
+					"value":""
+				}
+			]
+		},
+ 		
+ 		
+ 		{
+			"type": "node",
+			"id":"Actor",
+			"title":"Actor",
+			"title_de":"Menschlicher Akteur",
+			"groups":[],
+			"description":"A human actor is placed outside any system and accesses different use cases",
+			"description_de":"Ein menschlicher Akteur steht außerhalb eines Systems und nutzt verschiedene Anwendungsfälle",
+			"view":"actor.svg",
+			"icon":"actor.png",
+			"roles": [
+				
+				"actor",
+				
+			],
+			"properties": [
+				 {
+					"id":"Type",
+					"type":"Choice",
+					"title":"Type",
+					"value":"None",
+					"optional":false,
+					"items": [
+						{
+							"title":"None",
+							"value":"None",
+							"refToView":"none"
+						},
+						{
+							"title":"Customer",
+							"value":"Customer",
+							"refToView":"customer"
+						},
+						{
+							"title":"ServiceProvider",
+							"value":"ServiceProvider",
+							"refToView":"serviceprovider"
+						},
+						{
+							"title":"ThirdParty",
+							"value":"ThirdParty",
+							"refToView":"thirdparty"
+						},
+					]
+				},
+				{
+					"id":"name",
+					"type":"String",
+					"title":"Name",
+					"title_de":"Name",
+					"title_ru":"Имя",
+					"value":"",
+					"description":"",
+					"tooltip":"",
+					"readonly":false,
+					"optional":true,
+					"refToView":"text",
+					"length":"",
+					"wrapLines":true
+                }  ,
+                {
+					"id":"ID",
+					"type":"String",
+					"title":"ID",
+					"title_de":"ID",
+					"title_ru":"Имя",
+					"value":"",
+					"description":"",
+					"tooltip":"",
+					"readonly":false,
+					"optional":true,
+					"refToView":"ID",
+					"length":"",
+					"wrapLines":true
+                },
+                {
+					"id":"Department",
+					"type":"String",
+					"title":"Department",
+					"title_de":"Department",
+					"title_ru":"Имя",
+					"value":"",
+					"description":"",
+					"tooltip":"",
+					"readonly":false,
+					"optional":true,
+					"refToView":"Department",
+					"length":"",
+					"wrapLines":true
+                }  , 
+                {
+					"id":"Comment",
+					"type":"String",
+					"title":"Comment",
+					"title_de":"Comment",
+					"title_ru":"Имя",
+					"value":"",
+					"description":"",
+					"tooltip":"",
+					"readonly":false,
+					"optional":true,
+					"refToView":"Comment",
+					"length":"",
+					"wrapLines":true
+                }  ,     
+			]    
+			
+		},
+		
+		{
+			"type": "node",
+			"id":"Journey",
+			"title":"Journey",
+			"title_de":"System",
+			"title_ru":"Система",
+			"groups":[],
+			"description":"A System contains use cases",
+			"description_de":"Ein System enthält Anwendungsfälle",
+			"view":"Journey.svg",
+			"icon":"Journey.png",
+			"roles": [
+				
+				"journeyContent",
+				
+			],
+			"properties": [
+				{
+					"id":"name",
+					"type":"String",
+					"title":"Name",
+					"title_de":"Name",
+					"title_ru":"Имя",
+					"value":"Journey",
+					"description":"",
+					"tooltip":"",
+					"readonly":false,
+					"optional":true,
+					"refToView":"text",
+					"length":"",
+					"wrapLines":true
+                },
+                 {
+					"id":"JourneyStart",
+					"type":"date",
+					"title":"JourneyStart",
+					"title_de":"Date",
+					"title_ru":"Имя",
+					"value":"",
+					"description":"",
+					"tooltip":"",
+					"readonly":false,
+					"optional":true,
+					"refToView":"Date",
+					"length":"",
+					"wrapLines":true
+                },
+                {
+					"id":"JourneyEnd",
+					"type":"date",
+					"title":"JourneyEnd",
+					"title_de":"Date",
+					"title_ru":"Имя",
+					"value":"",
+					"description":"",
+					"tooltip":"",
+					"readonly":false,
+					"optional":true,
+					"refToView":"text",
+					"length":"",
+					"wrapLines":true
+                },
+                {
+					"id":"Status",
+					"type":"Choice",
+					"title":"Status",
+					"value":"None",
+					"optional":false,
+					"items": [
+						{
+							"title":"None",
+							"value":"None",
+							"refToView":"none"
+						},
+						{
+							"title":"Completed",
+							"value":"Completed",
+							"refToView":"completed"
+						},
+						{
+							"title":"Aborted",
+							"value":"Aborted",
+							"refToView":"aborted"
+						}
+					]
+				},
+				 {
+					"id":"Comment",
+					"type":"String",
+					"title":"Comment",
+					"title_de":"Comment",
+					"title_ru":"Имя",
+					"value":"",
+					"description":"",
+					"tooltip":"",
+					"readonly":false,
+					"optional":true,
+					"refToView":"text",
+					"length":"",
+					"wrapLines":true
+                },
+                {
+                    "id":"color",
+                    "type":"Color",
+                    "title":"Color",
+                    "title_de":"Farbe",
+                    "title_ru":"Цвет",
+                    "value": "#ffffff",
+                    "description":"",
+                    "readonly":false,
+                    "optional":true,
+                    "refToView":"border",
+                    "fill":true,
+                    "stroke":false
+				}
+			]
+		},
+		
+		{
+			"type": "node",
+			"id":"ExpectedJourney",
+			"title":"ExpectedJourney",
+			"title_de":"System",
+			"title_ru":"Система",
+			"groups":[],
+			"description":"A System contains use cases",
+			"description_de":"Ein System enthält Anwendungsfälle",
+			"view":"ExpectedJourney.svg",
+			"icon":"ExpectedJourney.png",
+			"roles": [
+				
+				"expectedJourneyContent",
+				
+			],
+			"properties": [
+				{
+					"id":"name",
+					"type":"String",
+					"title":"Name",
+					"title_de":"Name",
+					"title_ru":"Имя",
+					"value":"ExpectedJourney",
+					"description":"",
+					"tooltip":"",
+					"readonly":false,
+					"optional":true,
+					"refToView":"text",
+					"length":"",
+					"wrapLines":true
+                },
+                {
+					"id":"JourneyStart",
+					"type":"date",
+					"title":"JourneyStart",
+					"title_de":"Date",
+					"title_ru":"Имя",
+					"value":"",
+					"description":"",
+					"tooltip":"",
+					"readonly":false,
+					"optional":true,
+					"refToView":"Date",
+					"length":"",
+					"wrapLines":true
+                },
+                {
+					"id":"JourneyEnd",
+					"type":"date",
+					"title":"JourneyEnd",
+					"title_de":"Date",
+					"title_ru":"Имя",
+					"value":"",
+					"description":"",
+					"tooltip":"",
+					"readonly":false,
+					"optional":true,
+					"refToView":"text",
+					"length":"",
+					"wrapLines":true
+                },
+                {
+					"id":"Status",
+					"type":"Choice",
+					"title":"Status",
+					"value":"None",
+					"optional":false,
+					"items": [
+						{
+							"title":"None",
+							"value":"None",
+							"refToView":"none"
+						},
+						{
+							"title":"Completed",
+							"value":"Completed",
+							"refToView":"completed"
+						},
+						{
+							"title":"Aborted",
+							"value":"Aborted",
+							"refToView":"aborted"
+						}
+					]
+				},
+				 {
+					"id":"Comment",
+					"type":"String",
+					"title":"Comment",
+					"title_de":"Comment",
+					"title_ru":"Имя",
+					"value":"",
+					"description":"",
+					"tooltip":"",
+					"readonly":false,
+					"optional":true,
+					"refToView":"text",
+					"length":"",
+					"wrapLines":true
+                },
+                {
+                    "id":"color",
+                    "type":"Color",
+                    "title":"Color",
+                    "title_de":"Farbe",
+                    "title_ru":"Цвет",
+                    "value": "#ffffff",
+                    "description":"",
+                    "readonly":false,
+                    "optional":true,
+                    "refToView":"border",
+                    "fill":true,
+                    "stroke":false
+				}
+			]
+		},
+		
+		{
+			"type": "node",
+			"id":"ActualJourney",
+			"title":"ActualJourney",
+			"title_de":"System",
+			"title_ru":"Система",
+			"groups":[],
+			"description":"A System contains use cases",
+			"description_de":"Ein System enthält Anwendungsfälle",
+			"view":"ActualJourney.svg",
+			"icon":"ActualJourney.png",
+			"roles": [
+				
+				"ActualJourneyContent",
+				
+			],
+			"properties": [
+				{
+					"id":"name",
+					"type":"String",
+					"title":"Name",
+					"title_de":"Name",
+					"title_ru":"Имя",
+					"value":"ActualJourney",
+					"description":"",
+					"tooltip":"",
+					"readonly":false,
+					"optional":true,
+					"refToView":"text",
+					"length":"",
+					"wrapLines":true
+                },
+                 {
+					"id":"JourneyStart",
+					"type":"date",
+					"title":"JourneyStart",
+					"title_de":"Date",
+					"title_ru":"Имя",
+					"value":"",
+					"description":"",
+					"tooltip":"",
+					"readonly":false,
+					"optional":true,
+					"refToView":"Date",
+					"length":"",
+					"wrapLines":true
+                },
+                {
+					"id":"JourneyEnd",
+					"type":"date",
+					"title":"JourneyEnd",
+					"title_de":"Date",
+					"title_ru":"Имя",
+					"value":"",
+					"description":"",
+					"tooltip":"",
+					"readonly":false,
+					"optional":true,
+					"refToView":"text",
+					"length":"",
+					"wrapLines":true
+                },
+                {
+					"id":"Status",
+					"type":"Choice",
+					"title":"Status",
+					"value":"None",
+					"optional":false,
+					"items": [
+						{
+							"title":"None",
+							"value":"None",
+							"refToView":"none",
+						},
+						{
+							"title":"Completed",
+							"value":"Completed",
+							"refToView":"completed",
+						},
+						{
+							"title":"Aborted",
+							"value":"Aborted",
+							"refToView":"aborted",
+						}
+					]
+				},
+				 {
+					"id":"Comment",
+					"type":"String",
+					"title":"Comment",
+					"title_de":"Comment",
+					"title_ru":"Имя",
+					"value":"",
+					"description":"",
+					"tooltip":"",
+					"readonly":false,
+					"optional":true,
+					"refToView":"text",
+					"length":"",
+					"wrapLines":true
+                },
+                {
+                    "id":"color",
+                    "type":"Color",
+                    "title":"Color",
+                    "title_de":"Farbe",
+                    "title_ru":"Цвет",
+                    "value": "#ffffff",
+                    "description":"",
+                    "readonly":false,
+                    "optional":true,
+                    "refToView":"border",
+                    "fill":true,
+                    "stroke":false
+				}
+			]
+		},
+		{
+			"type": "node",
+			"id":"ExpectedTP",
+			"title":"ExpectedTP",
+			"groups":[],
+			"description":"A Workflow net condition.",
+			"view":"ExpectedTP.svg",
+			"icon":"ExpectedTP.png",
+			"roles": ["conditionSource", "conditionTarget"],
+			"properties": [
+			     {
+					"id":"name",
+					"type":"String",
+					"title":"Name",
+					"title_de":"Name",
+					"title_ru":"Имя",
+					"value":"",
+					"description":"",
+					"tooltip":"",
+					"readonly":false,
+					"optional":true,
+					"refToView":"text",
+					"length":"",
+					"wrapLines":true
+                },
+                 {
+					"id":"Date",
+					"type":"date",
+					"title":"Date",
+					"title_de":"Date",
+					"title_ru":"Имя",
+					"value":"",
+					"description":"",
+					"tooltip":"",
+					"readonly":false,
+					"optional":true,
+					"refToView":"Date",
+					"length":"",
+					"wrapLines":true
+                },
+                {
+					"id":"Channel",
+					"type":"Choice",
+					"title":"Channel",
+					"value":"None",
+					"optional":false,
+					"items": [
+						{
+							"title":"None",
+							"value":"None",
+							"refToView":"none",
+						},
+						{
+							"title":"web",
+							"value":"web",
+							"refToView":"web",
+						},
+						{
+							"title":"sms",
+							"value":"sms",
+							"refToView":"sms",
+						},
+						{
+							"title":"phone",
+							"value":"phone",
+							"refToView":"phone",
+						},
+						{
+							"title":"e_mail",
+							"value":"e_mail",
+							"refToView":"e_mail",
+						},
+						{
+							"title":"face_to_face",
+							"value":"face_to_face",
+							"refToView":"face_to_face",
+						},
+						{
+							"title":"self_servicemachine",
+							"value":"self_servicemachine",
+							"refToView":"self_servicemachine",
+						},
+					]
+				},
+				{
+					"id":"Evaluation",
+					"type":"String",
+					"title":"Evaluation",
+					"title_de":"Evaluation",
+					"title_ru":"Имя",
+					"value":"",
+					"description":"",
+					"tooltip":"",
+					"readonly":false,
+					"optional":true,
+					"refToView":"text",
+					"length":"",
+					"wrapLines":true
+                },
+				 {
+					"id":"Comment",
+					"type":"String",
+					"title":"Comment",
+					"title_de":"Comment",
+					"title_ru":"Имя",
+					"value":"",
+					"description":"",
+					"tooltip":"",
+					"readonly":false,
+					"optional":true,
+					"refToView":"text",
+					"length":"",
+					"wrapLines":true
+                },
+				{
+					"id":"color",
+					"type":"Color",
+					"title":"Color",
+					"value":"#00FF00",
+					"refToView":"color",
+					"optional":false,
+					"fill":true
+				}
+			]
+		},
+		{
+			"type": "node",
+			"id":"Ad_hocTP",
+			"title":"Ad_hocTP",
+			"groups":[],
+			"description":"A Workflow net input condition.",
+			"view":"Ad_hocTP.svg",
+			"icon":"Ad_hocTP.png",
+			"roles": ["conditionSource","conditionTarget"],
+			"properties": [
+			    {
+					"id":"name",
+					"type":"String",
+					"title":"Name",
+					"title_de":"Name",
+					"title_ru":"Имя",
+					"value":"",
+					"description":"",
+					"tooltip":"",
+					"readonly":false,
+					"optional":true,
+					"refToView":"text",
+					"length":"",
+					"wrapLines":true
+                },
+				{
+					"id":"color",
+					"type":"Color",
+					"title":"Color",
+					"value":"#FFCC00",
+					"refToView":"color",
+					"optional":false,
+					"fill":true
+				}
+			]
+		},
+		{
+			"type": "node",
+			"id":"Abort",
+			"title":"Abort",
+			"groups":[],
+			"description":"A Workflow net output condition.",
+			"view":"Abort.svg",
+			"icon":"Abort.png",
+			"roles": ["conditionTarget"],
+			"properties": [
+				{
+					"id":"color",
+					"type":"Color",
+					"title":"Color",
+					"value":"#FF0000",
+					"refToView":"color",
+					"optional":false,
+					"fill":true
+				}
+			]
+		},
+		{
+			"type": "edge",
+			"id":"Association",
+			"title":"Association",
+			"description":"",
+			"groups":[],
+			"view":"Association.svg",
+			"icon":"Association.png",
+			"roles": 
+			[
+			"associationFlow"
+			],
+			"properties": []
+		},
+		
+		{
+			"type": "edge",
+			"id":"Initiator",
+			"title":"Initiator",
+			"title_de":"Kontrollfluss",
+			"groups":["State"],
+			"groups_de":["Zustand"],
+			"description":"Connects states and events",
+			"description":"Verbindet Aktionen, Aktivitäten und Ereignisse",
+			"view":"edge.initiator.svg",
+			"icon":"edge.initiator.png",
+			"roles": [
+				
+				"initiatorFlow"
+			],
+			"properties":[
+			    {
+					"id":"transition",
+					"type":"String",
+					"title":"Transition",
+					"title_de":"Übergang",
+					"value":"",
+					"description":"",
+					"tooltip":"",
+					"readonly":false,
+					"optional":true,
+					"refToView":"condition",
+					"length":"",
+					"wrapLines":true
+                }
+			],
+			
+		},
+	],
+	"rules": {
+		"connectionRules": [
+			{
+				"role":"associationFlow",
+				"connects": [
+					{
+						"from":"conditionSource",
+						"to":"conditionTarget"
+					},
+					{
+						"from":"conditionTarget",
+						"to":"conditionSource"
+					}
+				]
+			},
+			{
+				"role":"initiatorFlow",
+				"connects": [
+					{
+						"from":"conditionSource",
+						"to":"actor"
+					},
+					{
+						"from":"conditionTarget",
+						"to":"actor"
+					}
+				]
+			}
+		],
+		"cardinalityRules": [
+			{
+				"role":"outputcondition",
+				maximumOccurrence:1
+			},
+		],
+		"containmentRules": [
+			{
+				"role":"diagram",
+				"contains":[
+					"Actor",
+					"Journey",
+					"ExpectedJourney",
+					"ActualJourney", 
+					"ExpectedTP", 
+					"Ad_hocTP",
+					"Abort"
+				]
+			},
+			{
+				"role":"Journey",
+				"contains":[
+					"ExpectedTP", 
+					"Ad_hocTP",
+					"Abort",
+					"Actor",
+				]
+			},
+			{
+				"role":"ExpectedJourney",
+				"contains":[
+					"ExpectedTP", 
+					"Abort",
+					"Actor"
+				]
+			},
+			{
+				"role":"ActualJourney",
+				"contains":[
+					"ExpectedTP",
+					"Ad_hocTP", 
+					"Abort",
+					"Actor"
+				]
+			},
+		]
+	}
+}
